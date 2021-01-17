@@ -1,0 +1,33 @@
+﻿/* стили для компьютеров и базовые стили для всех устройств */
+@media (max-width: 1118px) {
+    .profile {
+        padding-right: 2%;
+    }
+}
+@media (max-width: 1177px) {
+    .profile {
+        padding-right: 3%;
+    }
+}
+@media (max-width: 1017px) {
+    .profile {
+        padding-right: 4%;
+    }
+}
+@media (max-width: 918px) {
+    .profile {
+        padding-right: 8%;
+    }
+}
+/* только для устройств со средним размером экрана */
+@media (min-width: 481px) and (max-width:768px) {
+body {
+/* только для планшетов */
+}
+}
+/* только для устройств с малым размером экрана */
+@media (max-width:480px) {
+body {
+/* только для смартфонов */
+}
+}

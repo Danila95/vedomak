@@ -1,0 +1,3290 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pie_chart.css">
+    <link rel="stylesheet" href="css/dinamic_table.css">
+    <title>ИС Канцеляр</title>
+</head>
+<body>
+<!--обертка web-страницы-->
+<div class="wrapper" id="wrapper">
+    <!--левая панель сайта-->
+    <div class="left-sidebar">
+        <div class="left-sidebar__logo">
+            <a href="#"><img src="img/logo.png" alt="ИС Канцелярия"></a>
+            <a href="index.html"><h1>АРМИЯ РОССИИ</h1></a>
+        </div>
+        <div class="buttons-menu">
+            <div class="list-box">
+                <ul class="list-box__dropdown-menu list-box__dropdown-menu_visible-popup-menu">
+                    <li>
+                        <div class="title-list-box">
+                            <a class="btn-a" href="#" title="Перейти по ссылке">12 Научная рота</a>
+                            <span class="glyphicon glyphicon-menu-left"></span>
+                        </div>
+                        <ul class="list-box__dropdown-menu">
+                            <li><a class="btn-a" href="РХБЗ.html" title="Перейти по ссылке">Ведомость по РХБЗ</a></li>
+                            <li><a class="btn-a" href="#" title="Перейти по ссылке">List 1.1.2</a></li>
+                            <li><a class="btn-a" href="#" title="Перейти по ссылке">List 1.1.3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="title-list-box">
+                            <a class="btn-a" href="#" title="Перейти по ссылке">List 1.2</a>
+                            <span class="glyphicon glyphicon-menu-left"></span>
+                        </div>
+                        <ul class="list-box__dropdown-menu">
+                            <li><a class="btn-a" href="#" title="Перейти по ссылке">List 1.2.1</a></li>
+                            <li><a class="btn-a" href="#" title="Перейти по ссылке">List 1.2.2</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="title-list-box">
+                            <a class="btn-a" href="#" title="Перейти по ссылке">List 1.3</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title-list-box">
+                            <a class="btn-a" href="#" title="Перейти по ссылке">List 1.4</a>
+                            <span class="glyphicon glyphicon-menu-left"></span>
+                        </div>
+                        <ul class="list-box__dropdown-menu">
+                            <li><a class="btn-a" href="#" title="Перейти по ссылке">Test 1</a></li>
+                            <li><a class="btn-a" href="#" title="Перейти по ссылке">Test 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter-button" title="фильтр поиска">Фильтр</div>
+            <div class="filter-form">
+                <form method="get" class="search-filter">
+                    <label for="object-lesson">Предмет</label>
+                    <select type="text" id="object-lesson" name="object-lesson" class="object-lesson">
+                        <option value="0" selected="selected">Все</option>
+                        <option value="4">Военная топография</option>
+                        <option value="7">Военно-медицинская подготовка</option>
+                        <option value="12">Военно-политическая подготовка</option>
+                        <option value="10">Инженерная подготовка</option>
+                        <option value="5">Общевойсковые уставы</option>
+                        <option value="15">Огневая подготовка</option>
+                        <option value="16">Основы безопасности военной службы</option>
+                        <option value="11">Основы обеспечения защиты государственной тайны</option>
+                        <option value="9">Подготовка по связи</option>
+                        <option value="8">Противопожарная подготовка</option>
+                        <option value="13">Радиационная, химическая и биологическая защита</option>
+                        <option value="6">Разведывательная подготовка</option>
+                        <option value="3">Специальная подготовка</option>
+                        <option value="2">Строевая подготовка</option>
+                        <option value="1">Тактико-специальная подготовка</option>
+                        <option value="14">Физическая подготовка</option>
+                    </select>
+                    <label for="stuff-type">Вид службы</label>
+                    <select type="text" name="stuff-type" class="stuff-type">
+                        <option value="0" selected="selected">Все</option>
+                        <option value="К">По контракту</option>
+                        <option value="П">По призыву</option>
+                    </select>
+                    <label for="check-year">Год сдач</label>
+                    <select type="text" name="check-year" class="check-year">
+                        <option value="2019">2019</option>
+                        <option value="2020" selected="selected">2020</option>
+                    </select>
+                    <label for="check-period">Период сдач</label>
+                    <select type="text" name="check-period" class="check-period">
+                        <option value="З" selected="selected">Зимний период</option>
+                        <option value="Л">Летний период</option>
+                    </select>
+                    <input type="submit" value="Найти" class="btn btn-primary btn-sm">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--основная часть контента-->
+    <div class="content">
+        <div class="content__row">
+            <form method="post">
+                <div class="search-content">
+                    <div class="row__search">
+                        <div class="row__search">
+                            <input type="button" value="Расширенный поиск"
+                                   class="btn btn-primary btn-sm btn-extend-search">
+                            <span class="glyphicon glyphicon-search"></span>
+                            <input type="text" class="search__form-control" placeholder="Поиск...">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-extend-search">
+                    <div class="filter-form-extend">
+                        <div class="search-filter-extend">
+                            <label for="subdivision">Подразделение</label>
+                            <select type="text" id="subdivision" name="subdivision" class="subdivision">
+                                <option value="0" selected="selected">Все</option>
+                                <option value="1">12 ЦНИИ</option>
+                                <option value="2">Воинская часть 31610</option>
+                                <option value="3">12 Научная рота</option>
+                            </select>
+                            <label for="stuff-type">Вид службы</label>
+                            <select type="text" id="stuff-type" name="stuff-type" class="stuff-type">
+                                <option value="0" selected="selected">Все</option>
+                                <option value="К">По контракту</option>
+                                <option value="П">По призыву</option>
+                            </select>
+                            <label for="check-year">Год сдач</label>
+                            <select type="text" id="check-year" name="check-year" class="check-year">
+                                <option value="2019">2019</option>
+                                <option value="2020" selected="selected">2020</option>
+                            </select>
+                            <label for="check-period">Период сдач</label>
+                            <select type="text" id="check-period" name="check-period" class="check-period">
+                                <option value="З" selected="selected">Зимний период</option>
+                                <option value="Л">Летний период</option>
+                            </select>
+                            <input type="submit" value="Найти" class="btn btn-primary btn-sm btn-search">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="profile">
+                <button id="btn-menu" type="button" class="btn-menu">
+                    <img src="img/profile.png" class="profile__img-circle">
+                </button>
+                <ul id="dropdown-menu" class="profile__dropdown-menu">
+                    <li><a href="#">Профиль</a></li>
+                    <li><a href="#">Настройки</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-main">
+            <div class="card">
+                <div class="card__card-block">
+                    <div id="menu-table" class="menu-table">
+                        <a href="#" id="unroll-btn" class="unroll-btn btn btn-primary btn-sm" title="Развернуть меню">
+                            <span class="glyphicon glyphicon-menu-right"></span>
+                        </a>
+                    </div>
+                    <div class="menu-table-unroll">
+                        <span><a href="#" id="full-table"
+                                 class="full-table btn btn-primary btn-sm">Развернуть таблицу</a></span>
+                        <span><a href="#" id="small-table" class="small-table">Cвернуть таблицу</a></span>
+                        <span><a href="#" class="statistician-btn btn btn-primary btn-sm">Статистика</a></span>
+                        <input type="submit" id="btn-save-menu" value="Cохранить изменения" class="btn btn-sm btn-save">
+                        <span><a href="#" id="print-page" class="print-page btn btn-primary btn-sm
+                                ">Распечатать таблицу</a></span>
+                    </div>
+                    <form action="" method="post">
+                        <table class="register-book" id="register-book">
+                            <style>
+                                @media print {
+                                    /* Стили для печати */
+                                    #register-book .hidden {
+                                        display: none;
+                                    }
+
+                                    /* что не надо печатать */
+                                    #register-book {
+                                        font-size: 20px;
+                                        border: 1px solid #987;
+                                        border-collapse: collapse;
+                                        border-spacing: 0;
+                                    }
+
+                                    #register-book td,
+                                    #register-book th {
+                                        border: 1px solid #999;
+                                    }
+                                }
+                            </style>
+                            <caption><strong>Ведомость</strong>
+                                <p><b>сводная</b> - 12 Научная Рота за зимний период 2020 г.</p>
+                            </caption>
+                            <thead>
+                            <tr>
+
+
+                                <th>№ п/п</th>
+
+
+                                <th>Воинское звание</th>
+
+
+                                <th>Фамилия и инициалы</th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/4/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Военная
+                                        топография</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/7/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Военно-медицинская
+                                        подготовка</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/12/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Военно-политическая
+                                        подготовка</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/10/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Инженерная
+                                        подготовка</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/5/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Общевойсковые
+                                        уставы</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/15/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Огневая
+                                        подготовка</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/16/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Основы
+                                        безопасности военной службы</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/11/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Основы
+                                        обеспечения защиты государственной тайны</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/9/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Подготовка
+                                        по связи</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/8/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Противопожарная
+                                        подготовка</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/13/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Радиационная,
+                                        химическая и биологическая защита</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/6/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Разведывательная
+                                        подготовка</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/3/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Специальная
+                                        подготовка</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/2/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Строевая
+                                        подготовка</a></th>
+
+
+                                <th>
+                                    <a href="http://127.0.0.1:8000/subdivision/1/subject/1/?object-lesson=0&amp;stuff-type=0&amp;check-year=2020&amp;check-period=%D0%97">Тактико-специальная
+                                        подготовка</a></th>
+
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr>
+
+                                <!--<td>1</td>!-->
+
+
+                                <td>1</td>
+
+
+                                <td>Майор</td>
+
+
+                                <td>Румянцев А. В.</td>
+
+
+                                <td>4</td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td>5</td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td>5</td>
+
+
+                                <td>5</td>
+
+
+                                <td></td>
+
+
+                                <td>5</td>
+
+
+                            </tr>
+
+                            <tr>
+
+                                <!--<td>2</td>!-->
+
+
+                                <td>2</td>
+
+
+                                <td>Ст. мичман</td>
+
+
+                                <td>Фадякин С. В.</td>
+
+
+                                <td>5</td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                                <td></td>
+
+
+                            </tr>
+
+                            <tr>
+
+                                <td colspan="18">за управление роты</td>
+
+                            </tr>
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>4</td>!&ndash;&gt;-->
+
+
+                                <!--<td>3</td>-->
+
+
+                                <!--<td>Капитан</td>-->
+
+
+                                <!--<td>Бледнов Ю. В.</td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>5</td>!&ndash;&gt;-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td>Сержант</td>-->
+
+
+                                <!--<td>Точилин Я. О.</td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>6</td>!&ndash;&gt;-->
+
+
+                                <!--<td>5</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Бауэр В. Р.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>7</td>!&ndash;&gt;-->
+
+
+                                <!--<td>6</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Лаптев Б. А.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>5</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>5</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>8</td>!&ndash;&gt;-->
+
+
+                                <!--<td>7</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Ромазев П. Е.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>5</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>9</td>!&ndash;&gt;-->
+
+
+                                <!--<td>8</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Архипов А. И.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>5</td>-->
+
+
+                                <!--<td>5</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>10</td>!&ndash;&gt;-->
+
+
+                                <!--<td>9</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Барков А. Д.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>5</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>5</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>11</td>!&ndash;&gt;-->
+
+
+                                <!--<td>10</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Бервальд К. Е.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>12</td>!&ndash;&gt;-->
+
+
+                                <!--<td>11</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Богданов Д. Д.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>13</td>!&ndash;&gt;-->
+
+
+                                <!--<td>12</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Вересов А. Е.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>14</td>!&ndash;&gt;-->
+
+
+                                <!--<td>13</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Легчилин В. А.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>15</td>!&ndash;&gt;-->
+
+
+                                <!--<td>14</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Чирков Д. А.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>16</td>!&ndash;&gt;-->
+
+
+                                <!--<td>15</td>-->
+
+
+                                <!--<td>Мл. сержант</td>-->
+
+
+                                <!--<td>Пережигин А. В.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>17</td>!&ndash;&gt;-->
+
+
+                                <!--<td>16</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Горюшин В. А.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>18</td>!&ndash;&gt;-->
+
+
+                                <!--<td>17</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Мазикин П. Е.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>19</td>!&ndash;&gt;-->
+
+
+                                <!--<td>18</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Хакимов Э. А.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>20</td>!&ndash;&gt;-->
+
+
+                                <!--<td>19</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Капин Е. М.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>5</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>21</td>!&ndash;&gt;-->
+
+
+                                <!--<td>20</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Молчанов Р. С.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>22</td>!&ndash;&gt;-->
+
+
+                                <!--<td>21</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Смирнов Д. А.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>23</td>!&ndash;&gt;-->
+
+
+                                <!--<td>22</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Тищенко А. С.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>24</td>!&ndash;&gt;-->
+
+
+                                <!--<td>23</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Шиманский К. В.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>25</td>!&ndash;&gt;-->
+
+
+                                <!--<td>24</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Ширенков И. В.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--<td colspan="18">за 1 взвод</td>-->
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>27</td>!&ndash;&gt;-->
+
+
+                                <!--<td>25</td>-->
+
+
+                                <!--<td>Лейтенант</td>-->
+
+
+                                <!--<td>Петров М. А.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td>4</td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>28</td>!&ndash;&gt;-->
+
+
+                                <!--<td>26</td>-->
+
+
+                                <!--<td>Сержант</td>-->
+
+
+                                <!--<td>Грязнов П. С.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>29</td>!&ndash;&gt;-->
+
+
+                                <!--<td>27</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Ботяков В. Н.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>30</td>!&ndash;&gt;-->
+
+
+                                <!--<td>28</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Журавлёв А. М.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>31</td>!&ndash;&gt;-->
+
+
+                                <!--<td>29</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Казанцев Е. И.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>32</td>!&ndash;&gt;-->
+
+
+                                <!--<td>30</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Абрамов Т. Ю.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>33</td>!&ndash;&gt;-->
+
+
+                                <!--<td>31</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Бехтольд О. В.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>34</td>!&ndash;&gt;-->
+
+
+                                <!--<td>32</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Градусов И. Н.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>35</td>!&ndash;&gt;-->
+
+
+                                <!--<td>33</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Котов И. С.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>36</td>!&ndash;&gt;-->
+
+
+                                <!--<td>34</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Литвинов Р. Г.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>37</td>!&ndash;&gt;-->
+
+
+                                <!--<td>35</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Соколовский К. П.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>38</td>!&ndash;&gt;-->
+
+
+                                <!--<td>36</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Танаев М. С.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>39</td>!&ndash;&gt;-->
+
+
+                                <!--<td>37</td>-->
+
+
+                                <!--<td>Сержант</td>-->
+
+
+                                <!--<td>Жуков Д. Д.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>40</td>!&ndash;&gt;-->
+
+
+                                <!--<td>38</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Волохов М. В.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>41</td>!&ndash;&gt;-->
+
+
+                                <!--<td>39</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Горанов М. З.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>42</td>!&ndash;&gt;-->
+
+
+                                <!--<td>40</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Патрушев М. А.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>43</td>!&ndash;&gt;-->
+
+
+                                <!--<td>41</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Драницин С. Г.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>44</td>!&ndash;&gt;-->
+
+
+                                <!--<td>42</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Есопов Е. Н.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>45</td>!&ndash;&gt;-->
+
+
+                                <!--<td>43</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Зиев А. И.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>46</td>!&ndash;&gt;-->
+
+
+                                <!--<td>44</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Игнатенко В. С.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>47</td>!&ndash;&gt;-->
+
+
+                                <!--<td>45</td>-->
+
+
+                                <!--<td>Ефрейтор</td>-->
+
+
+                                <!--<td>Рюмин Р. И.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--&lt;!&ndash;<td>48</td>!&ndash;&gt;-->
+
+
+                                <!--<td>46</td>-->
+
+
+                                <!--<td>Рядовой</td>-->
+
+
+                                <!--<td>Сарбафиев Д. М.</td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                                <!--<td></td>-->
+
+
+                            <!--</tr>-->
+
+                            <!--<tr>-->
+
+                                <!--<td colspan="18">за 2 взвод</td>-->
+
+                            <!--</tr>-->
+
+                            </tbody>
+                        </table>
+                        <br>
+                        <span><a href="#" class="statistician-btn btn btn-primary btn-sm">Статистика</a></span>
+                        <input type="submit" id="btn-save-form" value="Cохранить изменения" class="btn btn-sm btn-save">
+                    </form>
+                </div>
+            </div>
+            <div class="card statistician-box" style="height: auto">
+                <p class="name-statistician"><strong>Статистика</strong></p>
+                <div class="tabs">
+                    <input type="radio" name="inset" value="" id="tab_1" checked>
+                    <label for="tab_1">Диаграмма</label>
+
+                    <input type="radio" name="inset" value="" id="tab_2">
+                    <label for="tab_2">Гистограмма</label>
+
+                    <input type="radio" name="inset" value="" id="tab_3">
+                    <label for="tab_3">tab 3</label>
+
+                    <div id="txt_1">
+                        <div class="statistician-content">
+                            <div class="statistician-text">
+                                <p></p>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>По списку</td>
+                                        <td>46</td>
+                                        <td>чел.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Всего проверено</td>
+                                        <td>45</td>
+                                        <td>чел.,</td>
+                                        <td>98</td>
+                                        <td>%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Из них получили оценки:</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Отлично</td>
+                                        <td><span class="number">14</span></td>
+                                        <td>чел.,</td>
+                                        <td><span class="number">31</span></td>
+                                        <td>%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Хорошо</td>
+                                        <td><span class="number">20</span></td>
+                                        <td>чел.,</td>
+                                        <td><span class="number">44</span></td>
+                                        <td>%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Удовлетворительно</td>
+                                        <td><span class="number">7</span></td>
+                                        <td>чел.,</td>
+                                        <td><span class="number">16</span></td>
+                                        <td>%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Неудовлетворительно</td>
+                                        <td><span class="number">5</span></td>
+                                        <td>чел.,</td>
+                                        <td><span class="number">11</span></td>
+                                        <td>%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Процент выполнения</td>
+                                        <td><span class="number">40</span></td>
+                                        <td>чел.,</td>
+                                        <td><span class="number">89</span></td>
+                                        <td>%</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <p class="general-assessment">Общая оценка: 4</p>
+                            </div>
+                            <div class="statistician-diagram">
+                                <figure>
+                                    <div class="figure-content">
+                                        <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut"
+                                             aria-labelledby="beers-title beers-desc" role="img">
+                                            <title id="beers-title">Статистика</title>
+
+                                            <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954"
+                                                    fill="transparent" stroke="#e1442a" stroke-width="3"
+                                                    stroke-dasharray="11 89" stroke-dashoffset="25"
+                                                    aria-labelledby="donut-segment-1-title">
+                                                <title id="donut-segment-1-title">Неудовлетворительно (11%)</title>
+                                            </circle>
+
+                                            <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954"
+                                            fill="transparent" stroke="#c675a5cf" stroke-width="3"
+                                            stroke-dasharray="16 84" stroke-dashoffset="41"
+                                            aria-labelledby="donut-segment-2-title">
+                                        <title id="donut-segment-2-title">Удовлетворительно (16%)</title>
+                                    </circle>
+
+                                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954"
+                                            fill="transparent" stroke="#904eae" stroke-width="3"
+                                            stroke-dasharray="44 56" stroke-dashoffset="85"
+                                            aria-labelledby="donut-segment-3-title">
+                                        <title id="donut-segment-3-title">Хорошо (44%)</title>
+                                    </circle>
+
+                                    <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954"
+                                            fill="transparent" stroke="#1667b2" stroke-width="3"
+                                            stroke-dasharray="31 69" stroke-dashoffset="116"
+                                            aria-labelledby="donut-segment-4-title">
+                                        <title id="donut-segment-4-title">Отлично (31%)</title>
+                                    </circle>
+
+                                </svg>
+                            </div>
+                            <figcaption class="figure-key">
+                                <ul class="figure-key-list" aria-hidden="true" role="presentation">
+
+                                    <li>
+                                        <span class="shape-circle shape-bad-score"></span> Неудовлетворительно (11%)
+                                    </li>
+
+                                    <li>
+                                        <span class="shape-circle shape-norm-score"></span> Удовлетворительно (16%)
+                                    </li>
+
+                                    <li>
+                                        <span class="shape-circle shape-good-score"></span> Хорошо (44%)
+                                    </li>
+
+                                    <li>
+                                        <span class="shape-circle shape-best-score"></span> Отлично (31%)
+                                    </li>
+
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                    </div>
+                    <div id="txt_2" class="tab">
+
+                    </div>
+                    <div id="txt_3" class="tab">
+                        <div class="container-tab-3">
+                            <div class="container-tab-3__buttons">
+                                <a href="#" class="tab-3-btn  btn btn-primary btn-sm show-data" data-show="data-1">button 1</a>
+                                <a href="#" class="tab-3-btn  btn btn-primary btn-sm show-data" data-show="data-2">button 2</a>
+                                <a href="#" class="tab-3-btn  btn btn-primary btn-sm show-data" data-show="data-3">button 3</a>
+                            </div>
+                            <div class="container-tab-3__divs showable show-data-1"><b>information div 1</b></div>
+                            <div class="container-tab-3__divs showable show-data-2"><b>information div 2</b></div>
+                            <div class="container-tab-3__divs showable show-data-3"><b>information div 3</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+</script>
+</body>
+</html>

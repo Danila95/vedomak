@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .timeline {
+        font-size: 0.75em;
+        height: 10em;
+    }
+    .timeline li {
+        height: 8em;
+    }
+    .timeline li {
+        height: 8em;
+        position: relative;
+        float: left;
+        width: 1.5em;
+        margin: 0 0.1em;
+    }
+    .timeline li a {
+        display: block;
+        height: 100%;
+    }
+    .timeline li .label {
+        display: block;
+        position: absolute;
+        bottom: -2em;
+        line-height: 2em;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .timeline li a .count {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-indent: -9999px;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        background: #AAA;
+    }
+
+    .sparkline {
+        float: left;
+        height: 1em;
+        margin: 0 0.5em;
+    }
+
+    .sparkline .index {
+        position: relative;
+        float: left;
+        width: 2px;
+        height: 1em;
+    }
+
+    .sparkline .index .count {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #AAA;
+        overflow: hidden;
+        text-indent: -9999px;
+    }
+</style>
+<body>
+<ul class="timeline">
+    <li>
+        <a href="http://www.example.com/2007/dec/1/" »
+           title="1 Декабря, 2007: 40">
+            <span class="label">1</span>
+            <span class="count">(40)</span>
+        </a>
+    </li>
+    <li>
+        <a href="http://www.example.com/2007/dec/2/" »
+           title="2 Декабря, 2007: 100">
+            <span class="label">2</span>
+            <span class="count">(100)</span>
+        </a>
+    </li>
+</ul>
+
+<span class="sparkline">
+<span class="index"><span class="count">(60, </span></span>
+<span class="index"><span class="count">220, </span></span>
+<span class="index"><span class="count">140, </span></span>
+<span class="index"><span class="count">80, </span></span>
+<span class="index"><span class="count">110, </span></span>
+<span class="index"><span class="count">90, </span></span>
+<span class="index"><span class="count">180, </span></span>
+<span class="index"><span class="count">140, </span></span>
+<span class="index"><span class="count">120, </span></span>
+<span class="index"><span class="count">160, </span></span>
+<span class="index"><span class="count">175, </span></span>
+<span class="index"><span class="count">225, </span></span>
+<span class="index"><span class="count">175, </span></span>
+<span class="index"><span class="count">125)</span></span>
+</span>
+
+</body>
+</html>

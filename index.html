@@ -1,0 +1,176 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>ИС Канцеляр</title>
+</head>
+<body>
+    <!--обертка web-страницы-->
+    <div class="wrapper" id="wrapper">
+        <!--левая панель сайта-->
+        <div class="left-sidebar">
+            <div class="left-sidebar__logo">
+                <a href="#"><img src="img/logo.png" alt="ИС Канцелярия"></a>
+                <a href="#"><h1>АРМИЯ РОССИИ</h1></a>
+            </div>
+            <div class="buttons-menu">
+                <div class="list-box">
+                    <ul class="list-box__dropdown-menu list-box__dropdown-menu_visible-popup-menu">
+                        <li>
+                            <div class="title-list-box">
+                                <a class="btn-a" href="#" title="Перейти по ссылке">12 Научная рота</a>
+                                <span class="glyphicon glyphicon-menu-left"></span>
+                            </div>
+                            <ul class="list-box__dropdown-menu">
+                                <li><a class="btn-a" href="РХБЗ.html" title="Перейти по ссылке">Ведомость по РХБЗ</a></li>
+                                <li><a class="btn-a" href="#" title="Перейти по ссылке">List 1.1.2</a></li>
+                                <li><a class="btn-a" href="#" title="Перейти по ссылке">List 1.1.3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="title-list-box">
+                                <a class="btn-a" href="#" title="Перейти по ссылке">List 1.2</a>
+                                <span class="glyphicon glyphicon-menu-left"></span>
+                            </div>
+                            <ul class="list-box__dropdown-menu">
+                                <li><a class="btn-a" href="#" title="Перейти по ссылке">List 1.2.1</a></li>
+                                <li><a class="btn-a" href="#" title="Перейти по ссылке">List 1.2.2</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="title-list-box">
+                                <a class="btn-a" href="#" title="Перейти по ссылке">List 1.3</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title-list-box">
+                                <a class="btn-a" href="#" title="Перейти по ссылке">List 1.4</a>
+                                <span class="glyphicon glyphicon-menu-left"></span>
+                            </div>
+                            <ul class="list-box__dropdown-menu">
+                                <li><a class="btn-a" href="#" title="Перейти по ссылке">Test 1</a></li>
+                                <li><a class="btn-a" href="#" title="Перейти по ссылке">Test 2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter-button" title="фильтр поиска">Фильтр</div>
+                <div class="filter-form">
+                    <form method="get" class="search-filter">
+                        <label for="object-lesson">Предмет</label>
+                        <select type="text" id="object-lesson" name="object-lesson" class="object-lesson">
+                            <option value="0" selected="selected">Все</option>
+                            <option value="4">Военная топография</option>
+                            <option value="7">Военно-медицинская подготовка</option>
+                            <option value="12">Военно-политическая подготовка</option>
+                            <option value="10">Инженерная подготовка</option>
+                            <option value="5">Общевойсковые уставы</option>
+                            <option value="15">Огневая подготовка</option>
+                            <option value="16">Основы безопасности военной службы</option>
+                            <option value="11">Основы обеспечения защиты государственной тайны</option>
+                            <option value="9">Подготовка по связи</option>
+                            <option value="8">Противопожарная подготовка</option>
+                            <option value="13">Радиационная, химическая и биологическая защита</option>
+                            <option value="6">Разведывательная подготовка</option>
+                            <option value="3">Специальная подготовка</option>
+                            <option value="2">Строевая подготовка</option>
+                            <option value="1">Тактико-специальная подготовка</option>
+                            <option value="14">Физическая подготовка</option>
+                        </select>
+                        <label for="stuff-type">Вид службы</label>
+                        <select type="text" name="stuff-type" class="stuff-type">
+                            <option value="0" selected="selected">Все</option>
+                            <option value="К">По контракту</option>
+                            <option value="П">По призыву</option>
+                        </select>
+                        <label for="check-year">Год сдач</label>
+                        <select type="text" name="check-year" class="check-year">
+                            <option value="2019">2019</option>
+                            <option value="2020" selected="selected">2020</option>
+                        </select>
+                        <label for="check-period">Период сдач</label>
+                        <select type="text" name="check-period" class="check-period">
+                            <option value="З" selected="selected">Зимний период</option>
+                            <option value="Л">Летний период</option>
+                        </select>
+                        <input type="submit" value="Найти" class="btn btn-primary btn-sm">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--основная часть контента-->
+        <div class="content">
+            <div class="content__row">
+                <form method="post">
+                    <div class="search-content">
+                        <div class="row__search">
+                            <div class="row__search">
+                                <input type="button" value="Расширенный поиск" class="btn btn-primary btn-sm btn-extend-search" >
+                                <span class="glyphicon glyphicon-search"></span>
+                                <input type="text" class="search__form-control" name="main-search" placeholder="Поиск...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-extend-search">
+                        <div class="filter-form-extend">
+                            <div class="search-filter-extend">
+                                <label for="subdivision">Подразделение</label>
+                                <select type="text" id="subdivision" name="subdivision" class="subdivision">
+                                    <option value="0" selected="selected">Все</option>
+                                    <option value="1">12 ЦНИИ</option>
+                                    <option value="2">Воинская часть 31610</option>
+                                    <option value="3">12 Научная рота</option>
+                                </select>
+                                <label for="stuff-type">Вид службы</label>
+                                <select type="text" id="stuff-type" name="stuff-type" class="stuff-type">
+                                    <option value="0" selected="selected">Все</option>
+                                    <option value="К">По контракту</option>
+                                    <option value="П">По призыву</option>
+                                </select>
+                                <label for="check-year">Год сдач</label>
+                                <select type="text" id="check-year" name="check-year" class="check-year">
+                                    <option value="2019">2019</option>
+                                    <option value="2020" selected="selected">2020</option>
+                                </select>
+                                <label for="check-period">Период сдач</label>
+                                <select type="text" id="check-period" name="check-period" class="check-period">
+                                    <option value="З" selected="selected">Зимний период</option>
+                                    <option value="Л">Летний период</option>
+                                </select>
+                                <input type="submit" value="Найти" class="btn btn-primary btn-sm btn-search">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="profile">
+                        <button  id="btn-menu" type="button" class="btn-menu">
+                            <img src="img/profile.png" class="profile__img-circle">
+                        </button>
+                        <ul id="dropdown-menu" class="profile__dropdown-menu">
+                            <li><a href="#">Профиль</a></li>
+                            <li><a href="#">Настройки</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Выйти</a></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__card-block">
+                    <h2>Информационная система учета и анализа успеваемости военнослужащих по предметам боевой подготовки</h2>
+                    <div class="card-block__main-image">
+                        <img src="img/main-logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    </script>
+</body>
+</html>
